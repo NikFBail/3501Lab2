@@ -1,3 +1,5 @@
+import java.beans.Transient;
+
 public class TestInteger implements Comparable<TestInteger> {
     private int value;
     static public int counter;
@@ -25,5 +27,4 @@ public class TestInteger implements Comparable<TestInteger> {
         System.out.println("Sorted array: ");
         Quicksort.printArray(arr2, arr2.length);
     }
-
 }
