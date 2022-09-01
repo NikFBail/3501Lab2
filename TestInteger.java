@@ -16,10 +16,10 @@ public class TestInteger implements Comparable<TestInteger> {
             arr1[i] = i + 1;
             arr2[i] = (int) Math.floor(Math.random() * (1000000 -1) + 1);
         }
-        int n = arr.length;
+        int n = arr1.length;
       
-        Quicksort(arr, 0, n - 1);
+        quickSort(arr1, 0, n - 1);
         System.out.println("Sorted array: ");
-        printArray(arr, n);
+        printArray(arr1, n);
     }
 }
