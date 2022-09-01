@@ -3,7 +3,7 @@ import java.beans.Transient;
 public class TestInteger implements Comparable<TestInteger> {
     private int value;
     static public int counter;
-
+    
     public int compareTo(TestInteger other) {
         counter++;
     }
@@ -18,8 +18,7 @@ public class TestInteger implements Comparable<TestInteger> {
             arr1[i] = i + 1;
             arr2[i] = (int) Math.floor(Math.random() * (1000000 -1) + 1);
         }
-      
-        Quicksort.quickSort(arr1, 0, arr1.length - 1);
+
         System.out.println("Sorted array: ");
         Quicksort.printArray(arr1, arr1.length);
 
