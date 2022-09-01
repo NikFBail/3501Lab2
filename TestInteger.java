@@ -16,21 +16,26 @@ public class TestInteger implements Comparable<TestInteger> {
         counter++;
     }
 
-    public Array orderedArray(int size) {
+    public TestInteger[] orderedArray(int size) {
         TestInteger[] arr = new TestInteger[size];
         for(int i = 0; i < size; i++) {
             arr[i] = new TestInteger(i + 1);
         }
+        return arr;
+    }
+
+    public TestInteger[] randomArray(int size) {
+        TestInteger[] arr = new TestInteger[size];
+        for(int i = 0; i < size; i++) {
+            arr[i] = new TestInteger((int) Math.floor(Math.random() * (1000000 -1) + 1));
+        }
+        return arr;
     }
 
     // Driver Code
     public static void main(String[] args) {
         int[] arr1 = new int[20];
         int[] arr2 = new int[20];
-        for(int i=0; i < arr1.length; i++) {
-            arr1[i] = i + 1;
-            arr2[i] = (int) Math.floor(Math.random() * (1000000 -1) + 1);
-        }
 
         System.out.println("Sorted array: ");
         Quicksort.printArray(arr1, arr1.length);
