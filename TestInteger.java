@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import java.beans.Transient;
-=======
-import java.sql.Array;
->>>>>>> main
-
 public class TestInteger implements Comparable<TestInteger> {
     private int value;
     static public int counter;
