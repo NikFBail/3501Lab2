@@ -13,8 +13,8 @@ public class TestInteger implement Comparable<Test Integer> {
         int[] arr1 = new int[20];
         int[] arr2 = new int[20];
         for(int i = 0; i < arr1.length; i++) {
-            arr1[i] = i;
-            arr2[i] = (int) Math.random();
+            arr1[i] = i + 1;
+            arr2[i] = (int) Math.floor(Math.random() * (1000000 - 1) + 1);
         }
         int n = arr.length;
       
