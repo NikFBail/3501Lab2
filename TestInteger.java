@@ -1,14 +1,27 @@
+<<<<<<< HEAD
 import java.beans.Transient;
+=======
+import java.sql.Array;
+>>>>>>> main
 
 public class TestInteger implements Comparable<TestInteger> {
     private int value;
     static public int counter;
-    
+
+    public TestInteger(int x) {
+        value = x;
+    }
+
     public int compareTo(TestInteger other) {
         counter++;
     }
 
-    
+    public Array orderedArray(int size) {
+        TestInteger[] arr = new TestInteger[size];
+        for(int i = 0; i < size; i++) {
+            arr[i] = new TestInteger(i + 1);
+        }
+    }
 
     // Driver Code
     public static void main(String[] args) {
