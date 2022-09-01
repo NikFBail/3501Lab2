@@ -1,4 +1,3 @@
-import java.io.*;
 
 public class Quicksort {
     // A utility function to swap two elements
