@@ -35,7 +35,7 @@ public class TestInteger implements Comparable<TestInteger> {
     }
 
     //Creates a random array of length size
-    public TestInteger[] randomArray(int size) {
+    public static TestInteger[] randomArray(int size) {
         TestInteger[] arr = new TestInteger[size];
         for(int i = 0; i < size; i++) {
             arr[i] = new TestInteger((int) Math.floor(Math.random() * (1000000 -1) + 1));
@@ -43,9 +43,12 @@ public class TestInteger implements Comparable<TestInteger> {
         return arr;
     }
 
+    //Test method to determine if an array is in order
     public boolean isSorted(TestInteger[] arr) {
         for(int i = 1; i < arr.length; i++) {
-            
+            if(arr[i].compareTo(arr[i - 1]) <= 0) {
+                return false;
+            }
         }
         return true;
     }
@@ -53,8 +56,9 @@ public class TestInteger implements Comparable<TestInteger> {
     // Driver Code
     public static void main(String[] args) {
         resetCounter();
-        int[] arr1 = new int[20];
-        int[] arr2 = new int[20];
+        TestInteger[] arr1 = randomArray(10000);
+        TestInteger[] arr2 = randomArray(10000);
+
 
         // System.out.println("Sorted array: ");
         // Quicksort.printArray(arr1, arr1.length);
