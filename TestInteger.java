@@ -59,12 +59,6 @@ public class TestInteger implements Comparable<TestInteger> {
         TestInteger[] arr1 = randomArray(10000);
         TestInteger[] arr2 = randomArray(10000);
 
-
-        // System.out.println("Sorted array: ");
-        // Quicksort.printArray(arr1, arr1.length);
-
-        // Quicksort.quickSort(arr2, 0, arr2.length - 1);
-        // System.out.println("Sorted array: ");
-        // Quicksort.printArray(arr2, arr2.length);
+        
     }
 }
