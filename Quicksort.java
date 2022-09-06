@@ -1,8 +1,8 @@
 
 public class Quicksort {
     // A utility function to swap two elements
-    static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
+    static void swap(TestInteger[] arr, int i, int j) {
+        TestInteger temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
@@ -12,9 +12,9 @@ public class Quicksort {
     array, and places all smaller (smaller than pivot)
     to left of pivot and all greater elements to right
     of pivot */
-    static int partition(int[] arr, int low, int high) {
+    static int partition(TestInteger[] arr, int low, int high) {
         // pivot
-        int pivot = arr[high]; 
+        TestInteger pivot = arr[high]; 
       
         // Index of smaller element and
         // indicates the right position
@@ -24,7 +24,7 @@ public class Quicksort {
         for(int j = low; j <= high - 1; j++) {         
             // If current element is smaller 
             // than the pivot
-            if (arr[j] < pivot) {             
+            if (arr[j].compareTo(pivot) < 0) {             
                 // Increment index of 
                 // smaller element
                 i++; 
@@ -40,7 +40,7 @@ public class Quicksort {
         low --> Starting index,
         high --> Ending index
     */
-    static void quickSort(int[] arr, int low, int high) {
+    static void quickSort(TestInteger[] arr, int low, int high) {
         if (low < high) {          
             // pi is partitioning index, arr[p]
             // is now at right place 

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 // Ryan Sajulga and Nik Bailey
 
 public class TestInteger implements Comparable<TestInteger> {
@@ -58,7 +60,10 @@ public class TestInteger implements Comparable<TestInteger> {
         resetCounter();
         TestInteger[] arr1 = randomArray(10000);
         TestInteger[] arr2 = randomArray(10000);
+        // long start1 = System.currentTimeMillis();
+        Arrays.sort(arr1); //Using timsort method
+        Quicksort.quickSort(arr2, 0, arr2.length);
 
-        
+
     }
 }
