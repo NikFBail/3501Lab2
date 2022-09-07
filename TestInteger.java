@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class TestInteger implements Comparable<TestInteger> {
     private int value; //Variable for setting the value of a TestInteger
     static public int counter; //Counter for # of comparisons
-
+    
     //Constructor for TestInteger object
     public TestInteger(int x) {
         value = x;
@@ -28,7 +28,7 @@ public class TestInteger implements Comparable<TestInteger> {
     }
 
     //Creates an ordered array of length size
-    public TestInteger[] orderedArray(int size) {
+    public static TestInteger[] orderedArray(int size) {
         TestInteger[] arr = new TestInteger[size];
         for(int i = 0; i < size; i++) {
             arr[i] = new TestInteger(i + 1);
@@ -46,7 +46,7 @@ public class TestInteger implements Comparable<TestInteger> {
     }
 
     //Test method to determine if an array is in order
-    public boolean isSorted(TestInteger[] arr) {
+    public static boolean isSorted(TestInteger[] arr) {
         for(int i = 1; i < arr.length; i++) {
             if(arr[i].compareTo(arr[i - 1]) <= 0) {
                 return false;
@@ -57,13 +57,32 @@ public class TestInteger implements Comparable<TestInteger> {
 
     // Driver Code
     public static void main(String[] args) {
-        resetCounter();
+        resetCounter(); //Making sure the counter starts at 0
         TestInteger[] arr1 = randomArray(10000);
         TestInteger[] arr2 = randomArray(10000);
-        // long start1 = System.currentTimeMillis();
+
+        // First testing scenario
         Arrays.sort(arr1); //Using timsort method
+        System.out.println("There were " + getCounter() + " comparisons using the timsort method");
+        resetCounter();
         Quicksort.quickSort(arr2, 0, arr2.length);
+        System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
+        resetCounter();
+        System.out.println("The arrays should be sorted");
+        System.out.println("arr1: " + isSorted(arr1) + "\n arr2: " + isSorted(arr2));
 
+        // Second testing scenario
+        arr1 = orderedArray(10000);
+        arr2 = orderedArray(10000);
+        Arrays.sort(arr1);
+        System.out.println("There were " + getCounter() + " comparisons using the timsort method");
+        resetCounter();
+        Quicksort.quickSort(arr2, 0, arr2.length);
+        System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
+        resetCounter();
+        System.out.println("The arrays should be sorted");
+        System.out.println("arr1: " + isSorted(arr1) + "\n arr2: " + isSorted(arr2));
 
+        // Third testing scenario
     }
 }
