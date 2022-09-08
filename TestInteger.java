@@ -117,7 +117,7 @@ public class TestInteger implements Comparable<TestInteger> {
         System.out.println("The arrays should be sorted");
         System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
         // Test 1- 9999 timsort, 49995000 quicksort
-        // Test 2- 9999 timsort, 49995000  quicksort
+        // Test 2- 9999 timsort, 49995000 quicksort
         // Test 3- 9999 timsort, 49995000 quicksort
         // Test 4- 9999 timsort, 49995000 quicksort
         // Test 5- 9999 timsort, 49995000 quicksort
@@ -134,7 +134,7 @@ public class TestInteger implements Comparable<TestInteger> {
         System.out.println("The arrays should be sorted");
         System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
         // Test 1- 29997 timsort, 49995000 quicksort
-        // Test 2- 29997 timsort, 49995000  quicksort
+        // Test 2- 29997 timsort, 49995000 quicksort
         // Test 3- 29997 timsort, 49995000 quicksort
         // Test 4- 29997 timsort, 49995000 quicksort
         // Test 5- 29997 timsort, 49995000 quicksort
@@ -150,7 +150,13 @@ public class TestInteger implements Comparable<TestInteger> {
         resetCounter();
         System.out.println("The arrays should be sorted");
         System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
-        
+        // Test 1- 29997 timsort, 49995000 quicksort
+        // Test 2- 29997 timsort, 49995000 quicksort
+        // Test 3- 29997 timsort, 49995000 quicksort
+        // Test 4- 29997 timsort, 49995000 quicksort
+        // Test 5- 29997 timsort, 49995000 quicksort
+
+
         // Fourth testing scenario
         arr1 = reverseSequence(10000);
         arr2 = reverseSequence(10000);
@@ -162,6 +168,11 @@ public class TestInteger implements Comparable<TestInteger> {
         resetCounter();
         System.out.println("The arrays should be sorted");
         System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
-
+        // Test 1- 29997 timsort, 49995000 quicksort
+        // Test 2- 29997 timsort, 49995000 quicksort
+        // Test 3- 29997 timsort, 49995000 quicksort
+        // Test 4- 29997 timsort, 49995000 quicksort
+        // Test 5- 29997 timsort, 49995000 quicksort
+        
     }
  }
