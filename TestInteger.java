@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+import java.util.Collections;
 // Ryan Sajulga and Nik Bailey
 
 public class TestInteger implements Comparable<TestInteger> {
@@ -54,7 +54,7 @@ public class TestInteger implements Comparable<TestInteger> {
     //Test method to determine if an array is in order
     public static boolean isSorted(TestInteger[] arr) {
         for(int i = 1; i < arr.length; i++) {
-            if(arr[i].compareTo(arr[i - 1]) <= 0) {
+            if(arr[i].compareTo(arr[i - 1]) > 0) {
                 return false;
             }
         }
@@ -62,6 +62,7 @@ public class TestInteger implements Comparable<TestInteger> {
     }
 
     // Driver Code
+    
     public static void main(String[] args) {
         resetCounter(); //Making sure the counter starts at 0
         TestInteger[] arr1 = randomArray(10000);
@@ -75,8 +76,13 @@ public class TestInteger implements Comparable<TestInteger> {
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\n arr2: " + isSorted(arr2));
-
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+        // Test 1- 9999 timsort, 49995000 quicksort
+        // Test 2- 9999 timsort, 49995000  quicksort
+        // Test 3- 9999 timsort, 49995000 quicksort
+        // Test 4- 9999 timsort, 49995000 quicksort
+        // Test 5- 9999 timsort, 49995000 quicksort
+        
         // Second testing scenario
         arr1 = orderedArray(10000);
         arr2 = orderedArray(10000);
@@ -87,8 +93,28 @@ public class TestInteger implements Comparable<TestInteger> {
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\n arr2: " + isSorted(arr2));
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+        // Test 1- 29997 timsort, 49995000 quicksort
+        // Test 2- 29997 timsort, 49995000  quicksort
+        // Test 3- 29997 timsort, 49995000 quicksort
+        // Test 4- 29997 timsort, 49995000 quicksort
+        // Test 5- 29997 timsort, 49995000 quicksort
 
         // Third testing scenario
+
+        // Forth testing scenario
+        
+        
+        /* 
+              // Sorting int Array in descending order
+              Arrays.sort(arr1, Collections.reverseOrder());
+           
+              // Displaying elements of int Array
+              System.out.println("Int Array Elements in reverse order:");
+              for (int i = 0; i < arr1.length; i++)
+                 System.out.println(arr1[i]);
+          */
+   
+    
     }
-}
+ }
