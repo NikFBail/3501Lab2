@@ -10,6 +10,10 @@ public class TestInteger implements Comparable<TestInteger> {
     public TestInteger(int x) {
         value = x;
     }
+    
+    public int getTestInteger(TestInteger x) {
+        return value;
+    }
 
     //Setter method to reset the counter
     public static void resetCounter() {
@@ -24,7 +28,9 @@ public class TestInteger implements Comparable<TestInteger> {
     //compareTo method that increments the counter
     public int compareTo(TestInteger other) {
         counter++;
-        return this.compareTo(other);
+        int curr = getTestInteger(this);
+        int oth = getTestInteger(other);
+        return curr - oth;
     }
 
     //Creates an ordered array of length size
@@ -65,7 +71,7 @@ public class TestInteger implements Comparable<TestInteger> {
         Arrays.sort(arr1); //Using timsort method
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
-        Quicksort.quickSort(arr2, 0, arr2.length);
+        Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
         System.out.println("The arrays should be sorted");
@@ -77,7 +83,7 @@ public class TestInteger implements Comparable<TestInteger> {
         Arrays.sort(arr1);
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
-        Quicksort.quickSort(arr2, 0, arr2.length);
+        Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
         System.out.println("The arrays should be sorted");
