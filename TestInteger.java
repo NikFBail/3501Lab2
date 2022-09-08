@@ -81,8 +81,27 @@ public class TestInteger implements Comparable<TestInteger> {
         return arr;
     }
 
-    // Driver Code
+    /* Create method that initializes an array
+     * The array is made up of 10000 elements
+     * but in 10 reverse sorted sequences of 1000 elements
+     */
+    public static TestInteger[] reverseSequence(int size) {
+        TestInteger[] arr = new TestInteger[size];
+        int num;
+        int start;
+        for(int i = 0; i < size / 1000; i++) {
+            num = i * 1000;
+            start = (int) Math.floor(Math.random() * (1000000 -1) + 1);
+            for(int j = 0; j < 1000; j++) {
+                arr[num] = new TestInteger(start);
+                start--;
+                num++;
+            }
+        }
+        return arr;
+    }
     
+     // Driver Code
     public static void main(String[] args) {
         resetCounter(); //Making sure the counter starts at 0
         TestInteger[] arr1 = randomArray(10000);
@@ -131,20 +150,10 @@ public class TestInteger implements Comparable<TestInteger> {
         resetCounter();
         System.out.println("The arrays should be sorted");
         System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
-        // Forth testing scenario
         
-        
-        /* 
-              // Sorting int Array in descending order
-              Arrays.sort(arr1, Collections.reverseOrder());
-           
-              // Displaying elements of int Array
-              System.out.println("Int Array Elements in reverse order:");
-              for (int i = 0; i < arr1.length; i++)
-                 System.out.println(arr1[i]);
-          */
-   
-    
+        // Fourth testing scenario
+        arr1 = reverseSequence(10000);
+        arr2 = reverseSequence(10000);
         Arrays.sort(arr1); //Using timsort method
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
