@@ -130,14 +130,18 @@ public class TestInteger implements Comparable<TestInteger> {
         // Second testing scenario
         arr1 = orderedArray(10000);
         arr2 = orderedArray(10000);
+        arr3 = orderedArray(10000);
         Arrays.sort(arr1);
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+        RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
+        resetCounter();
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
         // Test 1- 29997 timsort, 49995000 quicksort
         // Test 2- 29997 timsort, 49995000 quicksort
         // Test 3- 29997 timsort, 49995000 quicksort
@@ -147,14 +151,18 @@ public class TestInteger implements Comparable<TestInteger> {
         // Third testing scenario
         arr1 = sortedSequence(10000);
         arr2 = sortedSequence(10000);
+        arr3 = sortedSequence(10000);
         Arrays.sort(arr1);
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+        RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
+        resetCounter();
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
         // Test 1- 29997 timsort, 49995000 quicksort
         // Test 2- 29997 timsort, 49995000 quicksort
         // Test 3- 29997 timsort, 49995000 quicksort
@@ -165,14 +173,18 @@ public class TestInteger implements Comparable<TestInteger> {
         // Fourth testing scenario
         arr1 = reverseSequence(10000);
         arr2 = reverseSequence(10000);
+        arr3 = reverseSequence(10000);
         Arrays.sort(arr1); //Using timsort method
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+        RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
+        resetCounter();
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
         // Test 1- 29997 timsort, 49995000 quicksort
         // Test 2- 29997 timsort, 49995000 quicksort
         // Test 3- 29997 timsort, 49995000 quicksort
