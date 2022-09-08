@@ -121,11 +121,11 @@ public class TestInteger implements Comparable<TestInteger> {
         resetCounter();
         System.out.println("The arrays should be sorted");
         System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
-        // Test 1- 9999 timsort, 49995000 quicksort
-        // Test 2- 9999 timsort, 49995000 quicksort
-        // Test 3- 9999 timsort, 49995000 quicksort
-        // Test 4- 9999 timsort, 49995000 quicksort
-        // Test 5- 9999 timsort, 49995000 quicksort
+        // Test 1- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
+        // Test 2- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
+        // Test 3- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
+        // Test 4- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
+        // Test 5- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
         
         // Second testing scenario
         arr1 = orderedArray(10000);
