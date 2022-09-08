@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 // Ryan Sajulga and Nik Bailey
+import java.util.Random;
 
 public class TestInteger implements Comparable<TestInteger> {
     private int value; //Variable for setting the value of a TestInteger
@@ -106,6 +107,7 @@ public class TestInteger implements Comparable<TestInteger> {
         resetCounter(); //Making sure the counter starts at 0
         TestInteger[] arr1 = randomArray(10000);
         TestInteger[] arr2 = randomArray(10000);
+        TestInteger[] arr3 = randomArray(10000);
 
         // First testing scenario
         Arrays.sort(arr1); //Using timsort method
@@ -114,8 +116,11 @@ public class TestInteger implements Comparable<TestInteger> {
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+        RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
+        resetCounter();
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
         // Test 1- 9999 timsort, 49995000 quicksort
         // Test 2- 9999 timsort, 49995000 quicksort
         // Test 3- 9999 timsort, 49995000 quicksort
