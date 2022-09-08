@@ -61,6 +61,26 @@ public class TestInteger implements Comparable<TestInteger> {
         return true;
     }
 
+    /* Create method that initializes an array
+     * The array is made up of 10000 elements
+     * but in 10 sorted sequences of 1000 elements
+     */
+    public static TestInteger[] sortedSequence(int size) {
+        TestInteger[] arr = new TestInteger[size];
+        int num;
+        int start;
+        for(int i = 0; i < size / 10; i++) {
+            num = i * 1000;
+            start = (int) Math.floor(Math.random() * (1000000 -1) + 1);
+            for(int j = 0; j < 1000; j++) {
+                arr[num] = new TestInteger(start);
+                start++;
+                num++;
+            }
+        }
+        return arr;
+    }
+
     // Driver Code
     
     public static void main(String[] args) {
@@ -116,5 +136,14 @@ public class TestInteger implements Comparable<TestInteger> {
           */
    
     
+        Arrays.sort(arr1); //Using timsort method
+        System.out.println("There were " + getCounter() + " comparisons using the timsort method");
+        resetCounter();
+        Quicksort.quickSort(arr2, 0, arr2.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
+        resetCounter();
+        System.out.println("The arrays should be sorted");
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2));
+
     }
  }
