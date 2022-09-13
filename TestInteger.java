@@ -1,7 +1,8 @@
 import java.util.Arrays;
 import java.util.Collections;
-// Ryan Sajulga and Nik Bailey
 import java.util.Random;
+
+// Ryan Sajulga and Nik Bailey
 
 public class TestInteger implements Comparable<TestInteger> {
     private int value; //Variable for setting the value of a TestInteger
@@ -27,6 +28,9 @@ public class TestInteger implements Comparable<TestInteger> {
     }
 
     //compareTo method that increments the counter
+    //returns negative if curr < other
+    //returns positive if other < curr
+    //returns 0 if curr = other
     public int compareTo(TestInteger other) {
         counter++;
         int curr = getTestInteger(this);
@@ -108,88 +112,123 @@ public class TestInteger implements Comparable<TestInteger> {
         TestInteger[] arr1 = randomArray(10000);
         TestInteger[] arr2 = randomArray(10000);
         TestInteger[] arr3 = randomArray(10000);
+        TestInteger[] arr4 = randomArray(10000);
 
         // First testing scenario
         Arrays.sort(arr1); //Using timsort method
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
+
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+
         RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
         resetCounter();
+
+        MedianQuicksort.quickSort(arr4, 0, arr4.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the median quicksort method");
+        resetCounter();
+
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
-        // Test 1- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
-        // Test 2- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
-        // Test 3- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
-        // Test 4- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
-        // Test 5- 9999 timsort, 49995000 quicksort, 49995000 random quicksort 
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3) + "\narr4: " + isSorted(arr4));
+        // Test 1- 9999 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 2- 9999 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 3- 9999 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 4- 9999 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 5- 9999 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort 
         
         // Second testing scenario
         arr1 = orderedArray(10000);
         arr2 = orderedArray(10000);
         arr3 = orderedArray(10000);
+        arr4 = orderedArray(10000);
+
         Arrays.sort(arr1);
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
+
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+
         RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
         resetCounter();
+
+        MedianQuicksort.quickSort(arr4, 0, arr4.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the median quicksort method");
+        resetCounter();
+
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
-        // Test 1- 29997 timsort, 49995000 quicksort
-        // Test 2- 29997 timsort, 49995000 quicksort
-        // Test 3- 29997 timsort, 49995000 quicksort
-        // Test 4- 29997 timsort, 49995000 quicksort
-        // Test 5- 29997 timsort, 49995000 quicksort
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3) + "\narr4: " + isSorted(arr4));
+        // Test 1- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 2- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 3- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 4- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 5- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
 
         // Third testing scenario
         arr1 = sortedSequence(10000);
         arr2 = sortedSequence(10000);
         arr3 = sortedSequence(10000);
+        arr4 = sortedSequence(10000);
+
         Arrays.sort(arr1);
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
+
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+
         RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
         resetCounter();
+
+        MedianQuicksort.quickSort(arr4, 0, arr4.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the median quicksort method");
+        resetCounter();
+
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
-        // Test 1- 29997 timsort, 49995000 quicksort
-        // Test 2- 29997 timsort, 49995000 quicksort
-        // Test 3- 29997 timsort, 49995000 quicksort
-        // Test 4- 29997 timsort, 49995000 quicksort
-        // Test 5- 29997 timsort, 49995000 quicksort
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3) + "\narr4: " + isSorted(arr4));
+        // Test 1- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 2- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 3- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 4- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 5- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
 
 
         // Fourth testing scenario
         arr1 = reverseSequence(10000);
         arr2 = reverseSequence(10000);
         arr3 = reverseSequence(10000);
+        arr4 = reverseSequence(10000);
+
         Arrays.sort(arr1); //Using timsort method
         System.out.println("There were " + getCounter() + " comparisons using the timsort method");
         resetCounter();
+
         Quicksort.quickSort(arr2, 0, arr2.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the quicksort method");
         resetCounter();
+
         RandomQuicksort.quickSort(arr3, 0, arr3.length - 1);
         System.out.println("There were " + getCounter() + " comparisons using the random quicksort method");
         resetCounter();
+
+        MedianQuicksort.quickSort(arr4, 0, arr4.length - 1);
+        System.out.println("There were " + getCounter() + " comparisons using the median quicksort method");
+        resetCounter();
+
         System.out.println("The arrays should be sorted");
-        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3));
-        // Test 1- 29997 timsort, 49995000 quicksort
-        // Test 2- 29997 timsort, 49995000 quicksort
-        // Test 3- 29997 timsort, 49995000 quicksort
-        // Test 4- 29997 timsort, 49995000 quicksort
-        // Test 5- 29997 timsort, 49995000 quicksort
+        System.out.println("arr1: " + isSorted(arr1) + "\narr2: " + isSorted(arr2) + "\narr3: " + isSorted(arr3) + "\narr4: " + isSorted(arr4));
+        // Test 1- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 2- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 3- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 4- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
+        // Test 5- 49995 timsort, 49995000 quicksort, 49995000 random quicksort, 50054994 median quicksort
         
     }
  }
